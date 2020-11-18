@@ -1,37 +1,37 @@
 import 'package:flutter/material.dart';
 
 class UIStyles {
-  TextStyle title() => TextStyle(
+  static TextStyle title() => TextStyle(
     fontSize: 32,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
 
-  TextStyle header() => TextStyle(
+  static TextStyle header() => TextStyle(
     fontSize: 26,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
 
-  TextStyle description() => TextStyle(
+  static TextStyle description() => TextStyle(
     fontSize: 20,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
 
-  TextStyle highlight() => TextStyle(
+  static TextStyle highlight() => TextStyle(
     fontSize: 16,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
 
-  TextStyle normal() => TextStyle(
+  static TextStyle normal() => TextStyle(
     fontSize: 12,
     color: Colors.white,
     fontWeight: FontWeight.normal,
   );
 
-  TextStyle small() => TextStyle(
+  static TextStyle small() => TextStyle(
     fontSize: 8,
     color: Colors.white,
     fontWeight: FontWeight.normal,
