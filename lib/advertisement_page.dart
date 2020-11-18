@@ -24,7 +24,9 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
         title: Text('${widget.advertisement.advertiser} : ${widget.advertisement.name}'),
       ),
       backgroundColor: Colors.black,
-      body: Column(
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -74,6 +76,6 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
           SizedBox(height:20),
         ],
       ),
-    );
+    ));
   }
 }

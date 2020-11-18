@@ -65,7 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
 	Widget build(BuildContext context) {
 		return Scaffold(
 				backgroundColor: Colors.black,
-				body: Center(
+				body: Container(
+						margin: EdgeInsets.symmetric(horizontal: 12.0,vertical: 12.0),
 						child: Column(
 							children: [
 								SizedBox(height: 10,),
