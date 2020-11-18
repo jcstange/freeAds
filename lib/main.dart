@@ -3,7 +3,6 @@ import 'package:free_ads/ui_styles.dart';
 import 'entities.dart';
 import 'entity_factory.dart';
 import 'advertisement_item_ui.dart';
-import 'dart:math';
 
 void main() {
   runApp(MyApp());
