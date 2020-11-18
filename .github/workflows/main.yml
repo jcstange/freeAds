@@ -36,9 +36,9 @@ jobs:
         git init
         git config --global user.email jcstange@gmail.com
         git config --global user.name jcstange
+        git remote add origin https://${{secrets.COMMIT_TOKEN}}@github.com/jcstange/free_ads.git
         git add --all
         git status
         git checkout -b gh-pages
         git commit -m "gh-pages-update"
-        git remote add origin https://${{secrets.COMMIT_TOKEN}}@github.com/jcstange/free_ads.git
         git push origin gh-pages -fThis is a basic workflow to help you get started with Actions
