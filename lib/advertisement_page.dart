@@ -21,26 +21,57 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.advertisement.name),
+        title: Text('${widget.advertisement.advertiser} : ${widget.advertisement.name}'),
       ),
       backgroundColor: Colors.black,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
+          Container(
+            width: double.infinity,
             child: Image.network(widget.advertisement.image),
+          ),
+          SizedBox(height:20),
+          Text(
+            'Advertiser',
+            style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
+          ),
+          Text(
+            widget.advertisement.advertiser,
+            style: UIStyles.title(),
+          ),
+          SizedBox(height:20),
+          Text(
+            'Description',
+            style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
           ),
           Text(
             widget.advertisement.description,
-            style: UIStyles().title(),
+            style: UIStyles.title(),
+          ),
+          SizedBox(height:20),
+          Text(
+            'Price',
+            style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
           ),
           Text(
             widget.advertisement.price,
-            style: UIStyles().header(),
+            style: UIStyles.header(),
+          ),
+          SizedBox(height:20),
+          Text(
+            'Link',
+            style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
           ),
           InkWell(
-            child: Text('Go to page'),
+              child: Text(
+                'Go to page',
+                style: UIStyles.description(),
+              ),
             onTap: () => launch(widget.advertisement.link)
-          )
+          ),
+          SizedBox(height:20),
         ],
       ),
     );

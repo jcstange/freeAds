@@ -1,6 +1,7 @@
 class Advertisement {
   int id;
   String name;
+  String advertiser;
   String description;
   String image;
   String link;
@@ -11,6 +12,7 @@ class Advertisement {
   Advertisement({
     this.id,
     this.name,
+    this.advertiser,
     this.description,
     this.image,
     this.link,
