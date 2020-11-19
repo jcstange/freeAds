@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
 											style: UIStyles.header(),
 										)
 								),
-								//Expanded(child: AdvertisementGrid(filteredAdvertisements))
+								Expanded(child: AdvertisementGrid(filteredAdvertisements))
 							],
 						)
 				)
