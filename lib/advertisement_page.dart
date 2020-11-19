@@ -28,55 +28,57 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
         width: double.infinity,
         height: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              child: Image.network(widget.advertisement.image),
-            ),
-            SizedBox(height:20),
-            Text(
-              'Description',
-              style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
-            ),
-            Text(
-              widget.advertisement.description,
-              style: UIStyles.title(),
-            ),
-            SizedBox(height:20),
-            Text(
-              'Advertiser',
-              style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
-            ),
-            Text(
-              widget.advertisement.owner,
-              style: UIStyles.title(),
-            ),
-            SizedBox(height:20),
-            Text(
-              'Price',
-              style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
-            ),
-            Text(
-              widget.advertisement.price,
-              style: UIStyles.header(),
-            ),
-            SizedBox(height:20),
-            Text(
-              'Link',
-              style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
-            ),
-            InkWell(
-                child: Text(
-                  'Go to page',
-                  style: UIStyles.description(),
-                ),
-                onTap: () => launch(widget.advertisement.link)
-            ),
-            SizedBox(height:20),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: double.infinity,
+                child: Image.network(widget.advertisement.image),
+              ),
+              SizedBox(height:20),
+              Text(
+                'Description',
+                style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
+              ),
+              Text(
+                widget.advertisement.description,
+                style: UIStyles.title(),
+              ),
+              SizedBox(height:20),
+              Text(
+                'Advertiser',
+                style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
+              ),
+              Text(
+                widget.advertisement.owner,
+                style: UIStyles.title(),
+              ),
+              SizedBox(height:20),
+              Text(
+                'Price',
+                style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
+              ),
+              Text(
+                widget.advertisement.price,
+                style: UIStyles.header(),
+              ),
+              SizedBox(height:20),
+              Text(
+                'Link',
+                style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
+              ),
+              InkWell(
+                  child: Text(
+                    'Go to page',
+                    style: UIStyles.description(),
+                  ),
+                  onTap: () => launch(widget.advertisement.link)
+              ),
+              SizedBox(height:20),
+            ],
+          ),
         ),
       ),
     );
