@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:free_ads/ui_styles.dart';
 import 'entities.dart';
@@ -35,10 +37,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   List<Advertisement> advertisements = [
-  	EntityFactory.shoes(),
-		EntityFactory.jacket(),
-    EntityFactory.watch(),
-		EntityFactory.skies(),
+  	Advertisement.fromJson(jsonDecode(EntityFactory.shoes)),
+		Advertisement.fromJson(jsonDecode(EntityFactory.watch)),
+		Advertisement.fromJson(jsonDecode(EntityFactory.jacket)),
+		Advertisement.fromJson(jsonDecode(EntityFactory.skies)),
 	];
 
   List<Advertisement> filteredAdvertisements;
@@ -48,12 +50,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    print(Advertisement.fromJson(jsonDecode(EntityFactory.shoes)).link);
     _controller = TextEditingController();
     _controller.addListener(() {
 			final suggestionList = _controller.text.toLowerCase().isEmpty
 					? advertisements
-					: advertisements.where((advertisement) =>
-					advertisement.name.toLowerCase().startsWith(_controller.text.toLowerCase())).toList();
+					: advertisements.where((advertisement) {
+				String search = _controller.text.toLowerCase().trim();
+				//Filter by advertisement name
+				return advertisement.name.toLowerCase().contains(search)
+				//Filter by owner
+						|| advertisement.owner.toLowerCase().contains(search)
+				//Filter by tag
+						|| advertisement.tags?.firstWhere((tag) => tag.toLowerCase().contains(search), orElse: () => null) != null ?? false;
+			}).toList();
 			setState(() {
 				filteredAdvertisements = suggestionList;
 			});
@@ -64,7 +74,6 @@ class _MyHomePageState extends State<MyHomePage> {
 	@override
 	Widget build(BuildContext context) {
 		return Scaffold(
-				appBar: AppBar(title: Text('Test'),),
 				backgroundColor: Colors.black,
 				body: Container(
 						margin: EdgeInsets.symmetric(horizontal: 12.0,vertical: 12.0),
