@@ -84,26 +84,42 @@ class _MyHomePageState extends State<MyHomePage> {
 								SizedBox(height: 10,),
 								Container(
 										margin: EdgeInsets.symmetric(horizontal: 5.0),
-										child:TextFormField(
-											controller: _controller,
-											cursorColor: Colors.grey,
-											decoration: InputDecoration(
-													enabledBorder: OutlineInputBorder(
-														borderSide: BorderSide(
-															color: Colors.white,
-															width: 1.0,
+										child: Row(
+												mainAxisAlignment: MainAxisAlignment.start,
+												crossAxisAlignment: CrossAxisAlignment.center,
+												children: [
+													Expanded(
+														flex: 5,
+														child: TextFormField(
+															controller: _controller,
+															cursorColor: Colors.grey,
+															decoration: InputDecoration(
+																	enabledBorder: OutlineInputBorder(
+																		borderSide: BorderSide(
+																			color: Colors.white,
+																			width: 1.0,
+																		),
+																	),
+																	focusedBorder: OutlineInputBorder(
+																		borderSide: BorderSide(
+																			color: Colors.white,
+																			width: 1.0,
+																		),
+																	),
+																	labelText: 'Search',
+																	labelStyle: UIStyles.description().copyWith(color: Colors.grey)
+															),
+															style: UIStyles.header(),
 														),
 													),
-													focusedBorder: OutlineInputBorder(
-														borderSide: BorderSide(
-															color: Colors.white,
-															width: 1.0,
+													Expanded(
+														flex: 1,
+														child: GestureDetector(
+															child: Icon(Icons.settings, color: Colors.white,),
+															onTap: () => print("Settings click"), //Navigator.push(context, MaterialPageRoute()),
 														),
-													),
-													labelText: 'Search',
-													labelStyle: UIStyles.description().copyWith(color: Colors.grey)
-											),
-											style: UIStyles.header(),
+													)
+												]
 										)
 								),
 								Expanded(child: AdvertisementGrid(filteredAdvertisements))
