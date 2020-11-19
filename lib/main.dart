@@ -68,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
 				backgroundColor: Colors.black,
 				body: Container(
 						margin: EdgeInsets.symmetric(horizontal: 12.0,vertical: 12.0),
+						width: double.infinity,
+						height: double.infinity,
 						child: Column(
 							children: [
 								SizedBox(height: 10,),
