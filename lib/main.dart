@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
 	@override
 	Widget build(BuildContext context) {
 		return Scaffold(
+				appBar: AppBar(title: Text('Test'),),
 				backgroundColor: Colors.black,
 				body: Container(
 						margin: EdgeInsets.symmetric(horizontal: 12.0,vertical: 12.0),
