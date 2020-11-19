@@ -67,5 +67,9 @@ class User {
         image = json['image'],
         email = json['email'],
         link = json['link'],
-        phone = json['phone'];
+        phone = json['phone'],
+        advertisements = json['advertisements'] != null ? List.from(json['advertisements']) : null,
+        follow = json['follow'] != null ? List.from(json['follow']) : null,
+        followers = json['followers'] != null ? List.from(json['followers']) : null,
+        tags = json['tags'] != null ? List.from(json['tags']) : null;
 }
