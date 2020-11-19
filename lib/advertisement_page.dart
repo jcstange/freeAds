@@ -21,10 +21,12 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${widget.advertisement.advertiser} : ${widget.advertisement.name}'),
+        title: Text('${widget.advertisement.owner} : ${widget.advertisement.name}'),
       ),
       backgroundColor: Colors.black,
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
         child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -36,20 +38,20 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
           ),
           SizedBox(height:20),
           Text(
-            'Advertiser',
-            style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
-          ),
-          Text(
-            widget.advertisement.advertiser,
-            style: UIStyles.title(),
-          ),
-          SizedBox(height:20),
-          Text(
             'Description',
             style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
           ),
           Text(
             widget.advertisement.description,
+            style: UIStyles.title(),
+          ),
+          SizedBox(height:20),
+          Text(
+            'Advertiser',
+            style: UIStyles.highlight().copyWith(decoration: TextDecoration.underline),
+          ),
+          Text(
+            widget.advertisement.owner,
             style: UIStyles.title(),
           ),
           SizedBox(height:20),

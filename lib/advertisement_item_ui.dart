@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:free_ads/ui_styles.dart';
 import 'entities.dart';
 import 'advertisement_page.dart';
 
@@ -40,24 +41,16 @@ class AdvertisementView extends StatelessWidget {
                   bottom:30,
                   right:10,
                   child: Text(
-                      advertisement.name,
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white
-                      )
+                    advertisement.name,
+                    style: UIStyles.normal(),
                   )
               ),
               Positioned(
                   bottom:10,
                   right:10,
                   child: Text(
-                      advertisement.price,
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white
-                      )
+                    advertisement.price,
+                    style: UIStyles.normal().copyWith(fontWeight: FontWeight.bold),
                   )
               ),
             ]
