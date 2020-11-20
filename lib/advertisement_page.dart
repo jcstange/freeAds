@@ -44,7 +44,7 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
               ),
               Text(
                 widget.advertisement.description,
-                style: UIStyles.title(),
+                style: UIStyles.title().copyWith(fontWeight: FontWeight.w100),
               ),
               SizedBox(height:20),
               Text(
@@ -53,7 +53,7 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
               ),
               Text(
                 widget.advertisement.owner,
-                style: UIStyles.title(),
+                style: UIStyles.title().copyWith(fontWeight: FontWeight.w100),
               ),
               SizedBox(height:20),
               Text(
@@ -62,7 +62,7 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
               ),
               Text(
                 widget.advertisement.price,
-                style: UIStyles.header(),
+                style: UIStyles.title().copyWith(fontWeight: FontWeight.w100),
               ),
               SizedBox(height:20),
               Text(
@@ -72,7 +72,7 @@ class _AdvertisementPageState extends State<AdvertisementPage> {
               InkWell(
                   child: Text(
                     'Go to page',
-                    style: UIStyles.description(),
+                    style: UIStyles.title().copyWith(fontWeight: FontWeight.w100),
                   ),
                   onTap: () => launch(widget.advertisement.link)
               ),
