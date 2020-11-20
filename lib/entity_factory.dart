@@ -81,13 +81,12 @@ class EntityFactory {
     "id":0,
     "name":"Creator",
     "image":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.ApSA859-IfqS774hjuTcmgHaFj%26pid%3DApi&f=1",
+    "link":"",
     "email":"creator@gmail.com",
     "phone":"+358404004040",
     "follow":[1],
-    "followers:[],
-    "tags":[
-      "shoes",
-      ]
+    "followers":[],
+    "tags":["shoes"]
   }
   ''';
 
@@ -102,9 +101,19 @@ class EntityFactory {
     "phone":"+358404004040",
     "advertisements":[1,2,3,4],
     "follow":[],
-    "followers:[0],
+    "followers":[0],
     "tags":[]
   }
+  ''';
+
+  static String advertisements =
+  '''
+  [
+    $shoes,
+    $jacket,
+    $watch,
+    $skies
+  ]
   ''';
 
 }

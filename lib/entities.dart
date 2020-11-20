@@ -1,3 +1,6 @@
+
+import 'dart:convert';
+
 class Advertisement {
   int id;
   String name;
@@ -30,11 +33,18 @@ class Advertisement {
         owner = json['owner'],
         description = json['description'],
         image = json['image'],
-        tags = json['tags'] != null ? List.from(json['tags']) : null,
+        tags = json['tags'] != null ? List.from(json['tags']) : List(),
         link = json['link'],
         price = json['price'];
 
 }
+
+List<Advertisement> listFromJson(String _json){
+  List<Advertisement> list = List();
+  json.decode(_json).forEach((i) => list.add(Advertisement.fromJson(i)));
+  return list;
+}
+
 
 class User {
   int id;
@@ -68,8 +78,8 @@ class User {
         email = json['email'],
         link = json['link'],
         phone = json['phone'],
-        advertisements = json['advertisements'] != null ? List.from(json['advertisements']) : null,
-        follow = json['follow'] != null ? List.from(json['follow']) : null,
-        followers = json['followers'] != null ? List.from(json['followers']) : null,
-        tags = json['tags'] != null ? List.from(json['tags']) : null;
+        advertisements = json['advertisements'] != null ? List.from(json['advertisements']) : List(),
+        follow = json['follow'] != null ? List.from(json['follow']) : List(),
+        followers = json['followers'] != null ? List.from(json['followers']) : List(),
+        tags = json['tags'] != null ? List.from(json['tags']) : List();
 }
