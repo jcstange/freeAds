@@ -147,6 +147,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
 	@override
 	Widget build(BuildContext context) {
 	  return Scaffold(
@@ -158,21 +159,16 @@ class _ProfilePageState extends State<ProfilePage> {
 				child: Column(
 					children: [
 						ProfileHeader(widget.user),
-						GridView.count(
-								primary: false,
-								padding: const EdgeInsets.all(20),
-								crossAxisSpacing: 10,
-								mainAxisSpacing: 10,
-								crossAxisCount: 3,
-								children: listFromJson(EntityFactory.advertisements).map(
-												(advertisement) => AdvertisementView(advertisement: advertisement as Advertisement)
-								).toList()
-						),
+						Expanded(
+								child: AdvertisementGrid(
+                  listFromJson(EntityFactory.advertisements)
+								)
+						)
 					]
 				)
 			)
 		);
-  }
+	}
 }
 
 class ProfileHeader extends StatelessWidget {

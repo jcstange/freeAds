@@ -39,8 +39,11 @@ class Advertisement {
 
 }
 
-List<dynamic> listFromJson(String _json) =>
-    json.decode(_json).map((i) => Advertisement.fromJson(i)).toList();
+List<Advertisement> listFromJson(String _json){
+  List<Advertisement> list = List();
+  json.decode(_json).forEach((i) => list.add(Advertisement.fromJson(i)));
+  return list;
+}
 
 
 class User {

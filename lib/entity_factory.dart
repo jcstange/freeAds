@@ -109,20 +109,10 @@ class EntityFactory {
   static String advertisements =
   '''
   [
-    {
-      "id":1,
-      "name":"Nitrel V3",
-      "owner_id":1,
-      "owner":"XXL",
-      "description":"Nitrel V3, naisten maastojuoksukengät, Sininen",
-      "image":"https://www.xxl.fi/filespin/9deb2a549f394c7c9012978baef72b13?resize=767,767&quality=90",
-      "link":"https://www.xxl.fi/new-balance-nitrel-v3-naisten-maastojuoksukengat-sininen/p/1168929_1_style",
-      "tags":[
-         "shoes",
-         "sports"
-       ],
-      "price":"79,90 €"
-    }
+    $shoes,
+    $jacket,
+    $watch,
+    $skies
   ]
   ''';
 
